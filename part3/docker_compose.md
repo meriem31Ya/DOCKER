@@ -45,11 +45,13 @@ echo "<h1>Connexion MySQL réussie !</h1>";
 
 ---
 
-## 📝 2. Crée un `Dockerfile` dans `site/`
+## 📝 2. Crée un `Dockerfile` dans `site/`et installe les dépendances nécessaires
 
 ```Dockerfile
 FROM php:8.0-apache
+RUN ... (récupérer les dépendance nécessaires içi)
 WORKDIR /var/www/html
+
 COPY . .
 EXPOSE 80
 ```

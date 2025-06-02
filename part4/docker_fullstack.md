@@ -19,11 +19,9 @@ Dans ce TP, tu vas dockeriser un **vrai projet PHP en architecture MVC**, inclua
 ### 1. Cloner le dépôt
 
 ```bash
-git clone <URL_DU_DEPOT_GIT>
+git clone https://github.com/meriem31Ya/ProjectMVC.git
 cd <nom_du_projet>
 ```
-
-> Remplace `<URL_DU_DEPOT_GIT>` par l’adresse réelle du dépôt.
 
 ---
 
@@ -72,15 +70,12 @@ WORKDIR /var/www/html
 # Copie le code source
 COPY . .
 
-# Lance composer install si le dossier vendor n'existe pas
-RUN [ ! -d "vendor" ] && composer install || true
-
 EXPOSE 80
 ```
 
 ---
 
-### 5. Crée ton `docker-compose.yml`
+### 5. Crée ton `docker-compose.yml` exemple
 
 ```yaml
 version: "3.8"

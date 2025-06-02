@@ -101,15 +101,6 @@ docker rm <id>
 docker rmi mon-site-custom
 ```
 
----
-
-## 🧾 Livrables attendus
-
-- Contenu du `Dockerfile`
-- Capture d’écran du navigateur sur `http://localhost:8080`
-
----
-
 ## ✅ Critères de réussite
 
 - L’image est correctement construite
