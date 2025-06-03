@@ -66,12 +66,7 @@ EXPOSE 80
 version: "3.8"
 
 services:
-  web:
-    build: ./site
-    ports:
-      - "8080:80"
-    depends_on:
-      - db
+  \ rajouter la aprtie apache a ce niveau la
 
   db:
     image: mysql:5.7

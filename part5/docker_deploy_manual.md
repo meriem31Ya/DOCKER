@@ -22,6 +22,7 @@ ssh-keygen -t rsa -b 4096 -C "votre_email@example.com"
 > Appuie sur **Entrée** plusieurs fois pour accepter les valeurs par défaut.
 
 Les fichiers générés :
+
 - `~/.ssh/id_rsa` → clé privée (ne jamais partager)
 - `~/.ssh/id_rsa.pub` → clé publique
 
@@ -35,10 +36,18 @@ Envoie la clé publique sur ton VPS (remplace `user@ip_vps`) :
 ssh-copy-id user@ip_vps
 ```
 
+si vous avez plusierus clés:
+
+```bash
+ssh-copy-id -i ~/.ssh/nomclé.pub user@ip
+```
+
 > Tu peux maintenant te connecter sans mot de passe :
 
 ```bash
 ssh user@ip_vps
+ssh -i ~/.ssh/id_rsa_gitlabci user@ip_vps
+
 ```
 
 ---
@@ -51,6 +60,9 @@ Une fois connecté au VPS :
 
 ```bash
 curl -fsSL https://get.docker.com | sh
+ou
+curl -fsSL https://get.docker.com | sudo bash
+
 ```
 
 ### Ajouter ton utilisateur au groupe docker
@@ -75,7 +87,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 Depuis ta machine locale :
 
 ```bash
-scp -r mon-projet/ user@ip_vps:/home/user/mon-projet
+scp -i ~/.ssh/cléprivé -r lien du projet-local user@ip:/var/www/
 ```
 
 ---

@@ -19,7 +19,7 @@ Dans ce TP, tu vas dockeriser un **vrai projet PHP en architecture MVC**, inclua
 ### 1. Cloner le dépôt
 
 ```bash
-git clone https://github.com/meriem31Ya/ProjectMVC.git
+git clone https://gitlab.com/dev3632212/projectdocker#
 cd <nom_du_projet>
 ```
 
@@ -39,30 +39,15 @@ mon-projet/
 └── .dockerignore
 ```
 
----
-
-### 3. Crée ton `.dockerignore`
-
-```
-.git
-vendor
-node_modules
-*.log
-Dockerfile
-```
-
----
-
 ### 4. Crée ton `Dockerfile`
 
 ```Dockerfile
 FROM php:8.0-apache
 
 # Installe les extensions nécessaires
-RUN docker-php-ext-install pdo pdo_mysql
+RUN
 
 # Installe Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Définit le répertoire de travail
 WORKDIR /var/www/html
