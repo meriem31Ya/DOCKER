@@ -43,6 +43,8 @@
 
 ## ⚙️ dans un premier vous allez pouvoir deployer directement sur la branche main
 
+🔐 N'oubliez pas d'ajouter la clé `SSH_PRIVATE_KEY` dans les variables d’environnement du projet en cours (section CI/CD ou équivalent selon la plateforme utilisée).
+
 > Ce fichier permet d’exécuter un pipeline CI/CD dans GitLab, avec transfert des fichiers vers un serveur distant et relance de `docker-compose`.
 
 ```yaml
